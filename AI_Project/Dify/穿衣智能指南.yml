@@ -1,0 +1,97 @@
+app:
+  description: 穿衣智能指南，输入天气、温度、湿度，让大模型给出穿衣建议。
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: chat
+  name: 穿衣智能指南
+  use_icon_as_answer_icon: false
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 5
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    reranking_enable: false
+    retrieval_model: multiple
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .MPGA
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: qwen-max-latest
+    provider: tongyi
+  more_like_this:
+    enabled: false
+  opening_statement: '
+
+    暖暖同学，你好！在给出具体建议之前，我需要了解你所在地区的天气情况哦，比如天气现象（晴天、雨天等）、温度、湿度，以及是否有风速信息。如果你能提供这些数据，我会为你量身定制一份贴心的穿衣指南！期待你的回复～'
+  pre_prompt: '你是暖暖同学的专业穿衣顾问。请根据暖暖同学提供的天气信息（包括天气现象、温度、湿度），给出贴心、实用的穿衣建议。
+
+    核心任务：
+
+    分析天气状况：包括体感温度（需结合风速）、降雨概率等。
+
+    提供穿衣推荐：明确推荐衣物类型（例如：风衣、毛衣、T恤），并简要说明原因。
+
+    给出贴心提示：如带伞、防晒、保暖等额外建议。
+
+    回答要求：
+
+    风格：亲切、简洁、直接。
+
+    结构：先总结主要穿衣建议，再分点说明细节。
+
+    必须基于提供的天气数据进行分析，不要编造信息。'
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5
